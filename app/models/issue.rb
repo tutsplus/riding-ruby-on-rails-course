@@ -6,4 +6,6 @@ class Issue < ActiveRecord::Base
 
   validates_length_of :description, minimum: 10, maximum: 12 #, is: 6
   validates_numericality_of :no_followers, allow_blank: true
+
+  validates_with YesnoValidator
 end
