@@ -2,7 +2,9 @@ class IssuesController < ApplicationController
   # GET /issues
   # GET /issues.json
   def index
-    @issues = Issue.all
+    @issues = Issue
+    @issues = @issues.order(params[:sort]) if params[:sort]
+    @issues = @issues.all
 
     respond_to do |format|
       format.html # index.html.erb
