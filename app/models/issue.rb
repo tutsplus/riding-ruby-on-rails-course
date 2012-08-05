@@ -10,4 +10,12 @@ class Issue < ActiveRecord::Base
   validates_with YesnoValidator
 
   belongs_to :project
+
+  after_create :add_to_timeline
+
+  private
+
+  def add_to_timeline
+    Timeline.create!({ content: "An issue was created!", timelineable_id: id, timelineable_type: self.class.to_s })
+  end
 end
