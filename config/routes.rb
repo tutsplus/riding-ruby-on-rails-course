@@ -1,4 +1,8 @@
 Issues::Application.routes.draw do
+  get "hello/world"
+
+  get "hello/cowsay"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
