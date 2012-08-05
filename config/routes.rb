@@ -1,4 +1,6 @@
 Issues::Application.routes.draw do
+  resources :projects
+
   resources :issues
 
   # The priority is based upon order of creation:
