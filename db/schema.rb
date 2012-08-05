@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120805195414) do
+ActiveRecord::Schema.define(:version => 20120805212605) do
 
   create_table "issues", :force => true do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20120805195414) do
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
     t.integer  "project_id",   :default => 1
+    t.string   "tags"
   end
 
   create_table "projects", :force => true do |t|
@@ -27,6 +28,14 @@ ActiveRecord::Schema.define(:version => 20120805195414) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "timelines", :force => true do |t|
+    t.string   "content"
+    t.integer  "timelineable_id"
+    t.string   "timelineable_type"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
 end
