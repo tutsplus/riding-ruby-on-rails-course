@@ -9,8 +9,8 @@
 <table>
   <tr>
     <th>Title <%= link_to "sort", issues_path(sort: "title") %></th>
-    <th>Description</th>
-    <th>No followers</th>
+    <th>Description <%= link_to "sort", issues_path(sort: "description") %></th>
+    <th>No followers <%= link_to "sort", issues_path(sort: "no_followers") %></th>
     <th></th>
     <th></th>
     <th></th>
