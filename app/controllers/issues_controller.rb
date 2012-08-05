@@ -8,6 +8,7 @@ class IssuesController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @issues }
       format.xml { render xml: @issues }
+      format.rss # index.rss.builder
     end
   end
 
