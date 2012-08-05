@@ -15,6 +15,10 @@
   <%= @issue.no_followers %>
 </p>
 
+<p>
+  <b>Project: </b>
+  <%= link_to @issue.project.name, @issue.project %>
+</p>
 
 <%= link_to 'Edit', edit_issue_path(@issue) %> |
 <%= link_to 'Back', issues_path %>

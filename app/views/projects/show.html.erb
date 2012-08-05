@@ -10,6 +10,13 @@
   <%= @project.description %>
 </p>
 
+<h3>List of issues for this project</h3>
+
+<ul>
+  <% @project.issues.each do |issue| %>
+    <li><%= link_to issue.title, issue %></li>
+  <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
