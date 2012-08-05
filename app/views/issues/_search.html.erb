@@ -1,0 +1,23 @@
+<h2>Search</h2>
+
+<%= form_tag "/search", method: :get, class: "search" do %>
+  <p>
+    <%= text_field_tag :title, nil, size: 30, placeholder: "Issue title" %>
+  </p>
+
+  <ul>
+    <li><%=check_box_tag :followers, 1, true %> 1 follower</li>
+    <li><%=check_box_tag :followers, 2, true %> 2 followers</li>
+    <li><%=check_box_tag :followers, 3, true %> 3+ followers</li>
+  </ul>
+
+  <p>
+    <%= date_select :created_at_start, nil %>
+    &rarr;
+    <%= date_select :created_at_end, nil %>
+  </p>
+
+  <p>
+    <%=submit_tag "Search issues" %>
+  </p>
+<%-end%>
