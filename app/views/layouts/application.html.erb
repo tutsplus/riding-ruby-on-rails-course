@@ -10,9 +10,9 @@
 <body>
 
   <ul>
-    <li><a href="/timeline/index">Timeline</a></li>
-    <li><a href="/issues">Issues</a></li>
-    <li><a href="/issues/new">New Issue</li>
+    <li><a href="/timeline/index"><%= t "nav.timeline" %></a></li>
+    <li><a href="/issues"><%= "nav.issues.list" %></a></li>
+    <li><a href="/issues/new"><%= t "nav.issues.new" %></li>
     <%= yield :nav %>
   </ul>
 
