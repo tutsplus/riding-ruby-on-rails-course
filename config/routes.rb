@@ -1,6 +1,6 @@
 Issues::Application.routes.draw do
   scope ":locale" do
-    get "timeline/index"
+    match "timeline/index" =>  "timeline#index", via: :get
     resources :projects
     resources :issues
   end
