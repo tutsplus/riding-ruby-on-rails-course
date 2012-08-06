@@ -10,9 +10,9 @@
 <body>
 
   <ul>
-    <li><a href="/timeline/index"><%= t "nav.timeline" %></a></li>
-    <li><a href="/issues"><%= "nav.issues.list" %></a></li>
-    <li><a href="/issues/new"><%= t "nav.issues.new" %></li>
+    <li><%= link_to t("nav.timeline"), timeline_index_path %></a></li>
+    <li><%= link_to t("nav.issues.list"), issues_path %></a></li>
+    <li><%= link_to t("nav.issues.new"), new_issue_path %></li>
     <%= yield :nav %>
   </ul>
 
