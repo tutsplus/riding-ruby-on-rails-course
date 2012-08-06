@@ -1,0 +1,31 @@
+%h1 Listing issues
+
+=render "search"
+
+%table
+  %tr
+    %th 
+      Title
+      =link_to "sort", issues_path(sort: "title")
+    %th
+      Description 
+      =link_to "sort", issues_path(sort: "description")
+    %th
+      No followers
+      =link_to "sort", issues_path(sort: "no_followers")
+    %th
+    %th
+    %th
+
+  - @issues.each do |issue|
+    %tr
+      %td= issue.title
+      %td= issue.description
+      %td= issue.no_followers
+      %td= link_to 'Show', issue_path(id: issue.id)
+      %td= link_to 'Edit', edit_issue_path(id: issue.id)
+      %td= link_to 'Destroy', issue_path(id: issue.id), confirm: 'Are you sure?', method: :delete
+
+%br
+
+= link_to 'New Issue', new_issue_path
