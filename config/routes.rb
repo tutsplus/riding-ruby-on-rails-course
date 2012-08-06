@@ -1,9 +1,9 @@
 Issues::Application.routes.draw do
-  get "timeline/index"
-
-  resources :projects
-
-  resources :issues
+  scope ":locale" do
+    get "timeline/index"
+    resources :projects
+    resources :issues
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
