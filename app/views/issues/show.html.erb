@@ -20,5 +20,10 @@
   <%= link_to @issue.project.name, @issue.project %>
 </p>
 
+<p>
+  <b>Created at: </b>
+  <%= l @issue.created_at, format: :short %>
+</p>
+
 <%= link_to 'Edit', edit_issue_path(@issue) %> |
 <%= link_to 'Back', issues_path %>
